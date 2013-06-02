@@ -1,0 +1,39 @@
+{
+    "version": "0.1",
+    "name": "FFOS-OTP",
+    "description": "One-Time-Password Authenticator for Firefox OS",
+    "launch_path": "/index.html",
+    "fullscreen": "true",
+    "icons": {
+        "16": "/img/fotp-16.png",
+        "30": "/img/fotp-30.png",
+        "48": "/img/fotp-48.png",
+        "60": "/img/fotp-60.png",
+        "128": "/img/fotp-128.png"
+    },
+    "developer": {
+        "name": "Tim Swann",
+        "url": "http://faffyman.github.io/ffos-otp-auth"
+    },
+    "installs_allowed_from": ["*"],
+    "type": "privileged",
+    "permissions": {
+        "storage": {
+            "description": "Required to store podcast audio files and images."
+        }
+    },
+
+
+    "locales": {
+        "de": {
+            "description": "Es ist Einmal-Kennwort authentifizierung fur Firefox OS gemacht",
+            "developer": {
+                "url": "http://faffyman.github.io/ffos-otp-auth"
+            }
+        }
+
+    },
+    "default_locale": "en",
+    "orientation": ["portrait","portrait-secondary"]
+
+}
