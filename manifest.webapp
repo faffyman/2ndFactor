@@ -1,6 +1,6 @@
 {
     "version": "0.1",
-    "name": "FFOS-OTP",
+    "name": "2nd Factor",
     "description": "One-Time-Password Authenticator for Firefox OS",
     "launch_path": "/index.html",
     "fullscreen": "true",
@@ -13,7 +13,7 @@
     },
     "developer": {
         "name": "Tim Swann",
-        "url": "http://faffyman.github.io/ffos-otp-auth"
+        "url": "http://faffyman.github.io/2ndFactor"
     },
     "installs_allowed_from": ["*"],
     "type": "privileged",
@@ -28,7 +28,7 @@
         "de": {
             "description": "Es ist Einmal-Kennwort authentifizierung fur Firefox OS gemacht",
             "developer": {
-                "url": "http://faffyman.github.io/ffos-otp-auth"
+                "url": "http://faffyman.github.io/2ndFactor"
             }
         }
 
