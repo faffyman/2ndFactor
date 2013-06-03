@@ -30,9 +30,27 @@
     <div role="main" class="skin-organic">
         <p>A Second-factor authentication app, based on the OATH Algorithm implemented by many One Time Password systems, including the Google Authenticator.</p>
         <ul>
-            <li>Why?<br/><a href="http://lifehacker.com/5932700/please-turn-on-two+factor-authentication">Please, turn on two-factor auhentication</a></li>
-            <li>Heavily Influenced by this gbraad's Online HTML5 Authentcator<br/><a href="http://gauth.apps.gbraad.nl/">http://gauth.apps.gbraad.nl/</a></li>
-            <li>Source code<br/><a href="http://faffyman.github.io/2ndFactor">http://faffyman.github.io/2ndFactor</a></li>
+            <li>
+                <h2>Why?</h2>
+                <p><a href="http://www.google.com/landing/2step/#tab=why-you-need-it" target="_blank">Google Authenticator - Why</a></p>
+            </li>
+
+            <li>
+                <h2>How?</h2>
+                <p>
+            <a href="http://www.google.com/landing/2step/#tab=how-it-works" target="_blank">Google Authenticator - How it works</a><br />
+            <a href="http://www.google.com/landing/2step/#tab=how-it-protects" target="_blank">Google Authenticator - How it protects you</a></p>
+
+                <h3>How did I build this?</h3>
+                <p>Heavily Influenced by this gbraad's Online HTML5 Authentcator<br/><a href="http://gauth.apps.gbraad.nl/" target="_blank">http://gauth.apps.gbraad.nl/</a></p>
+            </li>
+
+            <li>
+                <h2>Where?</h2>
+                <p>This was created using lots of Open Source code from other people, therefore it's only right and proper that you can take this same code and do whatever you like with it.<br />
+                   Source code<br/><a href="http://faffyman.github.io/2ndFactor" target="_blank">http://faffyman.github.io/2ndFactor</a>
+                </p>
+            </li>
         </ul>
     </div>
 </section>
@@ -51,7 +69,8 @@
 
         <div role="main">
             <section data-type="list" class="body">
-                <header id="accountsHeader">Accounts  <span class="count" id='updatingIn'>..</span></header>
+                <header id="accountsHeader">Accounts  <span class="count" id='updatingIn'>refreshing in </span><canvas width="30" height="30" id="canvas_seconds"></canvas>
+                    </header>
                 <ul data-role="listview" data-type="edit" data-inset="true" id="accounts">
                     <li></li>
                 </ul>

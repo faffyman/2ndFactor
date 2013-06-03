@@ -23,14 +23,31 @@
 // ---------------------------------------------------------------------------
 
 var StorageService = function() {
+    // LocalStorage uses file IO and blocks the main thread to retrieve and save data
+    // See note at https://hacks.mozilla.org/category/firefox-os/as/complete/
+
+    var _cache= {};
+
+    var sync = function () {
+        for (var key in _cache) {
+            if (_cache.hasOwnProperty(key)) {
+                localStorage.setItem(key,_cache[key]);
+            }
+        }
+    }
 
     var setObject = function(key, value) {
         localStorage.setItem(key, JSON.stringify(value));
+        // also set it in the cache object
+        _cache[key] = JSON.stringify(value);
     }
 
     var getObject = function(key) {
-        var value = localStorage.getItem(key);
-        // if(value) return parsed JSON else undefined
+
+        if (!_cache[key]) {
+          _cache[key] =  localStorage.getItem(key);
+        }
+        var value =  _cache[key];
         return value && JSON.parse(value);
     }
 
@@ -130,7 +147,7 @@ var KeysController = function() {
             }
             // update all pass keys on load
             updateKeys();
-            setInterval(timerTick, 1000);
+            setInterval(timerTick, 250);
         } else {
             // No support for localStorage
             $('#updatingIn').text("x");
@@ -159,7 +176,39 @@ var KeysController = function() {
             updateKeys();
         }
         // show a countdown to next update
-        $('#updatingIn').text(countDown);
+        countdown(countDown);
+
+    }
+
+    var countdown = function(sec) {
+        var cSec = $("#canvas_seconds").get(0);
+        var ctx = cSec.getContext("2d");
+
+        ctx.clearRect(0, 0, cSec.width, cSec.height);
+        ctx.beginPath();
+        ctx.strokeStyle = '#FF4E00';
+
+        ctx.shadowBlur    = 1;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
+        ctx.shadowColor = '#555555';
+
+        ctx.arc(11,11,10, deg(0), deg(6 * (sec*2) ) );
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        ctx.font = '1rem "Open Sans", Verdana, Helvetica';
+        ctx.fillStyle = '#FF4E00';
+        ctx.textAlign = 'center';
+        ctx.fillText(sec, 11, 14);
+
+        $('#canvas_seconds').text(sec);
+        //$('#updatingIn').text(sec);
+
+    }
+
+    var deg = function (deg) {
+        return (Math.PI/180)*deg - (Math.PI/180)*90
     }
 
     var updateKeys = function() {
@@ -230,6 +279,7 @@ var KeysController = function() {
         addAccount: addAccount,
         deleteAccount: deleteAccount
     }
+
 }
 
 

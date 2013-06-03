@@ -44,6 +44,25 @@ section[data-type="sidebar"] > header .icon.icon-add {
 
 
 /* List */
+
+#accountsHeader {
+    position: relative;
+    width:100%;
+    vertical-align: middle;
+}
+
+#updatingIn {
+    float: right;
+    right: 8rem;
+    position: absolute;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+}
+#canvas_seconds{
+    float:right;
+    margin-right:3rem;
+
+}
 section[data-type="list"] > ul > li {
     position: relative;
     padding: 1rem;
