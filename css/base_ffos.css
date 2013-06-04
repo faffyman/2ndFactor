@@ -63,6 +63,7 @@
 
 /* reset.css */
 @import url(headers.css);
+@import url(input_areas.css);
 @import url(drawer.css);
 @import url(lists.css);
 

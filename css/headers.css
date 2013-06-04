@@ -239,12 +239,13 @@ section[role="region"] > header:first-child > button::-moz-focus-inner {
 section[role="region"] > header:first-child > button .icon,
 section[role="region"] > header:first-child > a .icon {
     position: static;
-    display: block;
+    /*display: block;*/
     width: 2rem;
     height: 4.9rem;
     margin: 0;
     overflow: visible;
     font-size: 0;
+    cursor:pointer;
 }
 
 section[role="region"] > header:first-child > button .icon:after,

@@ -118,3 +118,50 @@ section[data-type="data-entry"],
     margin:0.8rem auto;
     font-size: 2rem;
 }
+
+
+
+
+
+
+
+#settings-view {
+    z-index: 301;
+    background: #fff;
+    width: 100%;
+    height:100%;
+    display:block;
+    position: absolute;
+    bottom:-100%;
+}
+
+.move-down {
+    transform: translateY(100%);
+    transition: all 0.50 ease 0.25s !important;
+}
+
+.move-up {
+    transform: translateY(-100%);
+    transition: all 0.50 ease 0.25s !important;
+}
+
+section[role="region"] > header .icon.icon-settings {
+    background-image: url(/headers/images/icons/settings.png);
+}
+
+[data-type="list"] li > a aside img {
+    height: 4rem;
+    width: 4rem;
+    margin: 1rem 1rem 0 0;
+}
+
+[data-type="list"] li > a aside.pack-end.install {
+    background: url(/download.png) no-repeat;
+    height: 3rem;
+    width: 3rem;
+    margin: 1.5rem 0 0 1rem;
+}
+
+#settings-view form {
+    margin: 1.5rem;
+}
