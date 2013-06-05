@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>2nd Factor by faffyman</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>2nd Factor</h1>
+        <p>Firefox OS One-Time-Password Authenticator. Basically a port of Google authenticator</p>
+
+        <p class="view"><a href="https://github.com/faffyman/2ndFactor">View the Project on GitHub <small>faffyman/2ndFactor</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/faffyman/2ndFactor/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/faffyman/2ndFactor/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/faffyman/2ndFactor">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="2nd-factor" class="anchor" href="#2nd-factor"><span class="octicon octicon-link"></span></a>2nd Factor</h1>
+
+<p>´2nd Factor´is an authenticator for 2-factor logins.
+It is compatabile with Google Authenticator, and any other 2-factor login that uses the same open source
+<a href="http://www.openauthentication.org">OATH algorithm</a> to generate the <a href="time_password">One-Time-Passwords</a> or OTP.</p>
+
+<p>The Passwords are time-based and each one lasts for 30seconds.</p>
+
+<p>A second factor login means that even if your password is compromised, by having 2-factor authentication activated
+on your e.g. gmail account, an attacker cannot gain access without eth 2nd Factor.
+It's this 2nd Facor that you carry in your pocket on your phone.</p>
+
+<h2>
+<a name="firefox-os" class="anchor" href="#firefox-os"><span class="octicon octicon-link"></span></a>Firefox OS</h2>
+
+<p>2nd Factor was built as an experiment in building webapps for the Firefox OS platform. However,
+since it is HTML5 and Javascript it will work, or can be made to work with little effort on any modern browser.</p>
+
+<h3>
+<a name="local-storage" class="anchor" href="#local-storage"><span class="octicon octicon-link"></span></a>Local Storage</h3>
+
+<p>As it was built for Firefox OS phones, it uses local storage for storing the ´Secret Keys´ there is no server, and
+therefore no communication from the app to the outside. Your keys stay on yor browser.</p>
+
+<h3>
+<a name="style" class="anchor" href="#style"><span class="octicon octicon-link"></span></a>Style</h3>
+
+<p>The app has been styled using Firefox OS building blocks and is deliberately made to look like a standard Firefox OS app.
+But, as stated - it's just css, html and javascript - so have at it.</p>
+
+<h2>
+<a name="credits" class="anchor" href="#credits"><span class="octicon octicon-link"></span></a>Credits</h2>
+
+<h3>
+<a name="gerard-braad" class="anchor" href="#gerard-braad"><span class="octicon octicon-link"></span></a>Gerard Braad</h3>
+
+<p>The actual creation of the base32 hashes necessary for OATH was done already. If you want a non-firefox OS app that does
+the exact same - go download <a href="https://github.com/gbraad/">gbraad</a>'s <a href="http://gauth.apps.gbraad.nl/">HTML5 Google Authenticator</a> version which I used as the basis for this app - It's
+a great piece of work, much more generic and will work on any browser.</p>
+
+<ul>
+<li><a href="https://github.com/gbraad/html5-google-authenticator">https://github.com/gbraad/html5-google-authenticator</a></li>
+<li><a href="http://gauth.apps.gbraad.nl/">http://gauth.apps.gbraad.nl/</a></li>
+</ul><h3>
+<a name="russel-sayers" class="anchor" href="#russel-sayers"><span class="octicon octicon-link"></span></a>Russel Sayers</h3>
+
+<p>JavaScript implementation of the base32 hash, originally based on the JavaScript implementation as provided by Russell Sayers on his Tin Isles blog:
+<a href="http://blog.tinisles.com/2011/10/google-authenticator-one-time-password-algorithm-in-javascript/">http://blog.tinisles.com/2011/10/google-authenticator-one-time-password-algorithm-in-javascript/</a></p>
+
+<h3>
+<a name="brian-turek" class="anchor" href="#brian-turek"><span class="octicon octicon-link"></span></a>Brian Turek</h3>
+
+<p>JavaScript implementation of the SHA family of hashes.
+Version 1.31 Copyright Brian Turek 2008-2012
+Distributed under the BSD License
+See <a href="http://caligatio.github.com/jsSHA/">http://caligatio.github.com/jsSHA/</a> for more information</p>
+
+<h2>
+<a name="finally" class="anchor" href="#finally"><span class="octicon octicon-link"></span></a>Finally</h2>
+
+<p>The website for this is at github pages <a href="http://faffyman.github.io/2ndFactor">http://faffyman.github.io/2ndFactor</a></p>
+
+<h3>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h3>
+
+<p>Creative Commons, Attribution Share-Alike
+<a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">http://creativecommons.org/licenses/by-sa/3.0/deed.en_US</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/faffyman">faffyman</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
