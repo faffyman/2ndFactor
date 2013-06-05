@@ -190,6 +190,8 @@ var KeysController = function() {
 
     }
 
+
+    // Our countdown will be a circle rather than a plain number
     var countdown = function(sec) {
         var cSec = $("#canvas_seconds").get(0);
         var ctx = cSec.getContext("2d");
@@ -204,7 +206,7 @@ var KeysController = function() {
         ctx.shadowColor = '#555555';
 
         //ctx.moveTo(11,11);
-        ctx.arc(11,11,10, deg(0), deg(6 * (sec*2) ) );
+        ctx.arc(12,12,11, deg(0), deg(6 * (sec*2) ) );
         //ctx.moveTo(11,11);
         ctx.fillStyle = '#FF4E00';
         ctx.lineWidth = 2;
@@ -214,7 +216,7 @@ var KeysController = function() {
         ctx.font = '1rem "Open Sans", Verdana, Helvetica';
         ctx.fillStyle = '#FF4E00';
         ctx.textAlign = 'center';
-        ctx.fillText(sec, 11, 14);
+        ctx.fillText(sec, 12, 15);
 
         $('#canvas_seconds').text(sec);
         //$('#updatingIn').text(sec);
@@ -235,12 +237,12 @@ var KeysController = function() {
             var key = keyUtilities.generate(account.secret);
 
             // Construct HTML
-            var delLink = $('<a href="#" class="icon icon-delete">X</a>');
+            var delLink = $('<aside class="pack-end"><a href="#" class="icon icon-close">X</a></aside>');
             delLink.click(function () {
                 deleteAccount(index)
             });
             var detLink = $('<h4>' + key + '</h4><p>' + account.name + '</p>');
-            var accElem = $('<li>').append(detLink).append(delLink);
+            var accElem = $('<li>').append(delLink).append(detLink);
             // Add HTML element
             accountList.append(accElem);
         });
