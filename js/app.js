@@ -9,7 +9,7 @@
  * @License:  Creative Commons, Attribution Share-Alike
  * http://creativecommons.org/licenses/by-sa/3.0/deed.en_US
  *
- * See http://faffyman.github.io/ffos-otp-auth/ for more information
+ * See http://faffyman.github.io/2ndFactor/ for more information
  * ---------------------------------------------------------------------------------
  * Much of the work in this application is taken from previous work by "Gerard Braad"
  * See his web based HTML5 Gauth app on github
