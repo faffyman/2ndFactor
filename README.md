@@ -31,12 +31,34 @@ But, as stated - it's just css, html and javascript - so have at it.
 
 Credits
 --------
+
+### Gerard Braad
+
 The actual creation of the base32 hashes necessary for OATH was done already. If you want a non-firefox OS app that does
-the exact same - go download [gbraad](http://gauth.apps.gbraad.nl/)'s version which I used as the basis for this app - It's
+the exact same - go download [gbraad](https://github.com/gbraad/)'s [HTML5 Google Authenticator](http://gauth.apps.gbraad.nl/) version which I used as the basis for this app - It's
 a great piece of work, much more generic and will work on any browser.
 
+
+* <https://github.com/gbraad/html5-google-authenticator>
+* <http://gauth.apps.gbraad.nl/>
+
+### Russel Sayers
+
+JavaScript implementation of the base32 hash, originally based on the JavaScript implementation as provided by Russell Sayers on his Tin Isles blog:
+<http://blog.tinisles.com/2011/10/google-authenticator-one-time-password-algorithm-in-javascript/>
+
+### Brian Turek
+
+JavaScript implementation of the SHA family of hashes.
+Version 1.31 Copyright Brian Turek 2008-2012
+Distributed under the BSD License
+See <http://caligatio.github.com/jsSHA/> for more information
 
 Finally
 -------
 The website for this is at github pages <http://faffyman.github.io/2ndFactor>
+
+### License
+Creative Commons, Attribution Share-Alike
+<http://creativecommons.org/licenses/by-sa/3.0/deed.en_US>
 
