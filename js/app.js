@@ -147,7 +147,7 @@ var KeysController = function() {
             }
             // update all pass keys on load
             updateKeys();
-            setInterval(timerTick, 250);
+            setInterval(timerTick, 1000);
         } else {
             // No support for localStorage
             $('#updatingIn').text("x");
@@ -164,7 +164,7 @@ var KeysController = function() {
             if(secret != '') {
                 addAccount(name, secret);
 
-                var viewSettings = document.querySelector("#settings-view");
+                var viewSettings = document.getElementById("settings-view");
                     viewSettings.classList.remove('move-up');
                     viewSettings.classList.add('move-down');
             } else {
@@ -229,32 +229,44 @@ var KeysController = function() {
 
     var updateKeys = function() {
         var accountList = $('#accounts');
+
         // Remove all except the first line
-        accountList.find("li").remove();
+        //accountList.find("li").remove();
 
         //get a list of active accounts
         $.each(storageService.getObject('accounts'), function (index, account) {
+
             var key = keyUtilities.generate(account.secret);
 
-            // Construct HTML
-            var delLink = $('<aside class="pack-end"><a href="#" class="icon icon-close">X</a></aside>');
-            delLink.click(function () {
-                deleteAccount(index)
-            });
-            var detLink = $('<h4>' + key + '</h4><p>' + account.name + '</p>');
-            var accElem = $('<li>').append(delLink).append(detLink);
-            // Add HTML element
-            accountList.append(accElem);
+            // Add HTML element if it doesn't exists
+            if (accountList.children('#idx'+index).length==0) {
+                // Construct HTML
+                var chkBox = $('<label class="danger"><input type="checkbox" /><span></span></label>');
+                var delLink = $('<aside class="pack-end"><a href="#" class="icon icon-close">X</a></aside>');
+                delLink.click(function () {
+                    deleteAccount(index)
+                });
+                var detLink = $('<h4>' + key + '</h4><p>' + account.name + '</p>');
+                var accElem = $('<li class="account" id="idx'+index+'">').append(chkBox).append(delLink).append(detLink);
+                accountList.append(accElem);
+            } else {
+                //update the code for the existing index.
+                $('li#idx'+index).find('h4').html(key);
+            }
+
         });
      //   accountList.listview('refresh');
+
     }
 
     var deleteAccount = function(index) {
         // Remove object by index
         if(confirm('Delete Account?')){
-        var accounts = storageService.getObject('accounts');
-        accounts.splice(index, 1);
-        storageService.setObject('accounts', accounts);
+          var accounts = storageService.getObject('accounts');
+          accounts.splice(index, 1);
+          storageService.setObject('accounts', accounts);
+          //remove from list
+            $('#idx'+index).remove();
         }
         updateKeys();
     }
@@ -309,16 +321,23 @@ $(function() {
 
 
     //Show / Hide Settings view
-    var btnSettings = document.querySelector("#settings-btn");
-    var viewSettings = document.querySelector("#settings-view");
+    var btnSettings = document.getElementById("settings-btn");
+    var viewSettings = document.getElementById("settings-view");
     btnSettings.addEventListener ('click', function () {
         viewSettings.classList.remove('move-down');
         viewSettings.classList.add('move-up');
     });
-    var btnCloseSettings = document.querySelector("#close-btn");
+    var btnCloseSettings = document.getElementById("close-btn");
     btnCloseSettings.addEventListener ('click', function () {
         viewSettings.classList.remove('move-up');
         viewSettings.classList.add('move-down');
+    });
+
+    // Edit List View
+    var btnEdit = document.getElementById("edit-btn");
+    var editListUL = document.getElementById("accounts");
+    btnEdit.addEventListener ('click', function () {
+        editListUL.dataset.type = editListUL.dataset.type!='edit' ? 'edit' : '';
     });
 
 
