@@ -66,6 +66,7 @@
 @import url(input_areas.css);
 @import url(drawer.css);
 @import url(lists.css);
+@import url(switches.css);
 
 @media screen and (min-device-width: 540px) and (max-device-width: 720px) and (max-device-aspect-ratio: 1/1) {
     html { font-size: 105% !important; }
