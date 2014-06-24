@@ -1,39 +1,40 @@
 {
-    "version": "0.1",
-    "name": "2nd Factor",
-    "description": "One-Time-Password Authenticator for Firefox OS",
-    "launch_path": "/index.html",
-    "fullscreen": "true",
-    "icons": {
-        "16": "/img/fotp-16.png",
-        "30": "/img/fotp-30.png",
-        "48": "/img/fotp-48.png",
-        "60": "/img/fotp-60.png",
-        "128": "/img/fotp-128.png"
-    },
-    "developer": {
-        "name": "Tim Swann",
+  "version": "0.1",
+  "name": "2nd Factor",
+  "description": "One-Time-Password Authenticator for Firefox OS",
+  "launch_path": "/index.html",
+  "fullscreen": "true",
+  "icons": {
+    "16": "/img/fotp-16.png",
+    "30": "/img/fotp-30.png",
+    "48": "/img/fotp-48.png",
+    "60": "/img/fotp-60.png",
+    "128": "/img/fotp-128.png"
+  },
+  "developer": {
+    "name": "Tim Swann",
+    "url": "http://faffyman.github.io/2ndFactor"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "type": "privileged",
+  "permissions": {
+    "storage": {
+      "description": "your key is stored locally within the app. There is no communication outside the app."
+    }
+  },
+  "locales": {
+    "de": {
+      "description": "Es ist Einmal-Kennwort authentifizierung fur Firefox OS gemacht",
+      "developer": {
         "url": "http://faffyman.github.io/2ndFactor"
-    },
-    "installs_allowed_from": ["*"],
-    "type": "privileged",
-    "permissions": {
-        "storage": {
-            "description": "Required to store podcast audio files and images."
-        }
-    },
-
-
-    "locales": {
-        "de": {
-            "description": "Es ist Einmal-Kennwort authentifizierung fur Firefox OS gemacht",
-            "developer": {
-                "url": "http://faffyman.github.io/2ndFactor"
-            }
-        }
-
-    },
-    "default_locale": "en",
-    "orientation": ["portrait","portrait-secondary"]
-
+      }
+    }
+  },
+  "default_locale": "en",
+  "orientation": [
+    "portrait",
+    "portrait-secondary"
+  ]
 }
